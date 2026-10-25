@@ -1,0 +1,118 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>My map</title>
+  <link href="https://cdn.jsdelivr.net/npm/maplibre-gl@5.24.0/dist/maplibre-gl.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/maplibre-gl@5.24.0/dist/maplibre-gl.js"></script>
+  <style> body { margin: 0; } #map { position: absolute; inset: 0; } 
+
+#layer-controls {
+  position: absolute;
+  top: 100px;
+  left: 100px;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+background: rgba(0, 0, 0, 0.6);
+  padding: 12px;
+  border-radius: 8px;
+}
+
+#layer-controls button {
+  padding: 10px 14px;
+  background: white;
+  color: #222;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+#layer-controls button:hover {
+  background: #eeeeee;
+}
+</style>
+</head>
+<body>
+<div id="layer-controls">
+  <button id="toggle-discgolf">Hide Disc Golf Courses</button>
+  <button id="toggle-golf">Hide Golf Courses</button>
+</div>
+  <div id="map"></div>
+  <script>
+    const map = new maplibregl.Map({
+      container: 'map',
+      style: 'style.json',        // the file you downloaded from Maputnik
+      center: [-72.7, 44.0],    // longitude, latitude
+      zoom: 7
+    });
+    map.addControl(new maplibregl.NavigationControl());
+map.on('load', () => {
+  const layerToggles = [
+    {
+      buttonId: 'toggle-discgolf',
+      layerId: 'discgolf',
+      label: 'Disc Golf Courses'
+    },
+    {
+      buttonId: 'toggle-golf',
+      layerId: 'golfcourses',
+      label: 'Golf Courses'
+    }
+  ];
+
+  layerToggles.forEach(({ buttonId, layerId, label }) => {
+    const button = document.getElementById(buttonId);
+    let visible = true;
+
+    button.addEventListener('click', () => {
+      visible = !visible;
+
+      map.setLayoutProperty(
+        layerId,
+        'visibility',
+        visible ? 'visible' : 'none'
+      );
+
+      button.textContent =
+        `${visible ? 'Hide' : 'Show'} ${label}`;
+    });
+  });
+});
+  map.on('click', 'discgolf', (e) => {
+    const feature = e.features[0];
+
+    // Get the course name from the GeoJSON properties
+    const courseName =
+      feature.properties.name ||
+      feature.properties.Name ||
+      'Course name unavailable';
+
+    new maplibregl.Popup()
+      .setLngLat(e.lngLat)
+      .setText(courseName)
+      .addTo(map);
+  });
+map.on('click', 'golfcourses', (e) => {
+  const feature = e.features[0];
+  const courseName =
+    feature.properties.SITE_NAME ||
+    feature.properties.SITE_NAME ||
+    'Course name unavailable';
+
+  new maplibregl.Popup()
+    .setLngLat(e.lngLat)
+    .setText(courseName)
+    .addTo(map);
+});
+
+  // Change the cursor when hovering over a course
+  map.on('mouseenter', 'discgolf', () => {
+    map.getCanvas().style.cursor = 'pointer';
+  });
+  </script>
+</body>
+</html>
