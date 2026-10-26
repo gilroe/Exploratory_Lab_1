@@ -34,7 +34,7 @@ background: rgba(0, 0, 0, 0.6);
 #layer-controls button:hover {
   background: #eeeeee;
 }
-.button-circle {
+.button-symbol {
   display: inline-block;
   width: 10px;
   height: 10px;
@@ -49,19 +49,36 @@ background: rgba(0, 0, 0, 0.6);
 .golf {
   background-color: red;
 }
+.biodiversity {
+  background-color: green;
+  border-radius: 0;
+}
+
+.biodiversity-label {
+  display: flex;
+  align-items: center;
+  padding: 10px 14px;
+  color: white;
+  font-size: 14px;
+}
 </style>
 </head>
 <body>
 <div id="layer-controls">
   <button id="toggle-discgolf">
-    <span class="button-circle disc-golf"></span>
-    <span class="button-text">Hide Disc Golf Courses</span>
+    <span class="button-symbol disc-golf"></span>
+    <span class="button-text">Disc Golf Courses (Hide)</span>
   </button>
 
   <button id="toggle-golf">
-    <span class="button-circle golf"></span>
-    <span class="button-text">Hide Golf Courses</span>
+    <span class="button-symbol golf"></span>
+    <span class="button-text">Golf Courses (Hide)</span>
   </button>
+  
+  <span class="biodiversity-label"></span>
+  <span class="button-symbol biodiversity"></span>
+  <span>High-Biodiversity Areas</span>
+
 </div>
   <div id="map"></div>
   <script>
@@ -100,7 +117,7 @@ map.on('load', () => {
       );
 
       button.querySelector('.button-text').textContent =
-  `${visible ? 'Hide' : 'Show'} ${label}`;
+  `${visible ? '(Hide)' : '(Show)'} ${label}`;
     });
   });
 });
