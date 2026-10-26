@@ -34,12 +34,34 @@ background: rgba(0, 0, 0, 0.6);
 #layer-controls button:hover {
   background: #eeeeee;
 }
+.button-circle {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+.disc-golf {
+  background-color: blue;
+}
+
+.golf {
+  background-color: red;
+}
 </style>
 </head>
 <body>
 <div id="layer-controls">
-  <button id="toggle-discgolf">Hide Disc Golf Courses</button>
-  <button id="toggle-golf">Hide Golf Courses</button>
+  <button id="toggle-discgolf">
+    <span class="button-circle disc-golf"></span>
+    Hide Disc Golf Courses
+  </button>
+
+  <button id="toggle-golf">
+    <span class="button-circle golf"></span>
+    Hide Golf Courses
+  </button>
 </div>
   <div id="map"></div>
   <script>
