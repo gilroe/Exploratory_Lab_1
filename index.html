@@ -99,8 +99,8 @@ map.on('load', () => {
         visible ? 'visible' : 'none'
       );
 
-      button.textContent =
-        `${visible ? 'Hide' : 'Show'} ${label}`;
+      button.querySelector('.button-text').textContent =
+  `${visible ? 'Hide' : 'Show'} ${label}`;
     });
   });
 });
@@ -110,7 +110,6 @@ map.on('load', () => {
     // Get the course name from the GeoJSON properties
     const courseName =
       feature.properties.name ||
-      feature.properties.Name ||
       'Course name unavailable';
 
     new maplibregl.Popup()
@@ -121,7 +120,6 @@ map.on('load', () => {
 map.on('click', 'golfcourses', (e) => {
   const feature = e.features[0];
   const courseName =
-    feature.properties.SITE_NAME ||
     feature.properties.SITE_NAME ||
     'Course name unavailable';
 
