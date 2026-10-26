@@ -7,7 +7,7 @@
   <link href="https://cdn.jsdelivr.net/npm/maplibre-gl@5.24.0/dist/maplibre-gl.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/maplibre-gl@5.24.0/dist/maplibre-gl.js"></script>
   <style> body { margin: 0; } #map { position: absolute; inset: 0; } 
-
+//
 #layer-controls {
   position: absolute;
   top: 100px;
@@ -131,32 +131,34 @@ map.on('load', () => {
     });
   });
 });
-  map.on('click', 'discgolf', (e) => {
-    const feature = e.features[0];
+    //code from Class SLides
+      function onEachDiscGolf(e) {
+        const course = e.features[0].properties;
 
-    // Get the course name from the GeoJSON properties
-    const courseName =
-      feature.properties.name ||
-      'Course name unavailable';
+        if (course.name) {
+          const popup = new maplibregl.Popup();
+          popup.setLngLat(e.lngLat);
+          popup.setText(course.name);
+          popup.addTo(map);
+        }
+      }
 
-    new maplibregl.Popup()
-      .setLngLat(e.lngLat)
-      .setText(courseName)
-      .addTo(map);
-  });
-map.on('click', 'golfcourses', (e) => {
-  const feature = e.features[0];
-  const courseName =
-    feature.properties.SITE_NAME ||
-    'Course name unavailable';
+      map.on('click', 'discgolf', onEachDiscGolf);
 
-  new maplibregl.Popup()
-    .setLngLat(e.lngLat)
-    .setText(courseName)
-    .addTo(map);
-});
+      function onEachGolf(e) {
+        const course = e.features[0].properties;
 
-  // Change the cursor when hovering over a course
+        if (course.SITE_NAME) {
+          const popup = new maplibregl.Popup();
+          popup.setLngLat(e.lngLat);
+          popup.setText(course.SITE_NAME);
+          popup.addTo(map);
+        }
+      }
+
+      map.on('click', 'golfcourses', onEachGolf);
+
+  // Change cursor
   map.on('mouseenter', 'discgolf', () => {
     map.getCanvas().style.cursor = 'pointer';
   });
