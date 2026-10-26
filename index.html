@@ -76,16 +76,7 @@ background: rgba(0, 0, 0, 0.6);
 </style>
 </head>
 <body>
-</div>
-  <div id="map"></div>
-  <script>
-    const map = new maplibregl.Map({
-      container: 'map',
-      style: 'style.json',        // the file you downloaded from Maputnik
-      center: [-72.7, 44.0],    // longitude, latitude
-      zoom: 7
-    });
-<div id="legend-controls">
+  <div id="legend-controls">
   <button id="toggle-discgolf">
     <span class="button-symbol disc-golf"></span>
     <span class="button-text">Disc Golf Courses (Click to Hide)</span>
@@ -99,7 +90,16 @@ background: rgba(0, 0, 0, 0.6);
  <div class="biodiversity-label">
   <span class="biodiversity"></span>
   <span>High-Biodiversity Areas</span>
+  </div>
 </div>
+  <div id="map"></div>
+  <script>
+    const map = new maplibregl.Map({
+      container: 'map',
+      style: 'style.json',        // the file you downloaded from Maputnik
+      center: [-72.7, 44.0],    // longitude, latitude
+      zoom: 7
+    });
     map.addControl(new maplibregl.NavigationControl());
 map.on('load', () => {
   const layerToggles = [
