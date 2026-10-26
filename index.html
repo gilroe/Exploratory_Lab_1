@@ -159,7 +159,7 @@ map.on('load', () => {                  // lines 105-136 based on maplibre 'chan
           popup.addTo(map);
         }
       }
-
+      map.on('click', 'golfcourses', onEachGolf);
     
        function onEachDiscGolfoverlap(e) {
         const course = e.features[0].properties;
