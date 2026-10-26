@@ -160,6 +160,32 @@ map.on('load', () => {                  // lines 105-136 based on maplibre 'chan
       }
 
       map.on('click', 'golfcourses', onEachGolf);
+    
+       function onEachDiscGolfoverlap(e) {
+        const course = e.features[0].properties;
+
+        if (course.name) {
+          const popup = new maplibregl.Popup();
+          popup.setLngLat(e.lngLat);
+          popup.setText(course.name);
+          popup.addTo(map);
+        }
+      }
+
+      map.on('click', 'discgolfoverlap', onEachDiscGolfoverlap);
+
+      function onEachGolfoverlap(e) {
+        const course = e.features[0].properties;
+
+        if (course.SITE_NAME) {
+          const popup = new maplibregl.Popup();
+          popup.setLngLat(e.lngLat);
+          popup.setText(course.SITE_NAME);
+          popup.addTo(map);
+        }
+      }
+
+      map.on('click', 'golfcourseoverlap', onEachGolf);
 
   // Change cursor
   map.on('mouseenter', 'discgolf', () => {
