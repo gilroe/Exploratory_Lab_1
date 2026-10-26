@@ -102,7 +102,7 @@ background: rgba(0, 0, 0, 0.6);
       zoom: 7
     });
     map.addControl(new maplibregl.NavigationControl());
-map.on('load', () => {                  // lines 105-130 based on maplibre 'change color with button'
+map.on('load', () => {                  // lines 105-124 based on maplibre 'change color with button'
   const layerOnOff = [
     {
       buttonId: 'OnOff-discgolf',
@@ -116,7 +116,7 @@ map.on('load', () => {                  // lines 105-130 based on maplibre 'chan
     }
   ];
 
-  layerToggles.forEach(({ buttonId, layerId, label }) => {
+  layerOnOff.forEach(({ buttonId, layerId, label }) => {
     const button = document.getElementById(buttonId);
     var visible = true;
 
