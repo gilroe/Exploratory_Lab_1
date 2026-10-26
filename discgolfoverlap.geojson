@@ -1,0 +1,12 @@
+{
+"type": "FeatureCollection",
+"name": "discgolfoverlap",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{"type":"Feature","properties":{"id":"base-camp-outfitters-disc-golf","name":"Base Camp Outfitters Disc Golf","city":"Killington ","state":"Vermont","zip":"05751","holeCount":18,"rating":5,"latitude":43.6685707,"longitude":-72.8029679,"OBJECTID":49,"BPR":3,"ACRES":13483.3},"geometry":{"type":"MultiPoint","coordinates":[[-72.8029679,43.6685707]]}},
+{"type":"Feature","properties":{"id":"fosters-meadow","name":"Foster's Meadow","city":"Hartland ","state":"Vermont","zip":"05048","holeCount":9,"rating":2,"latitude":43.5501529,"longitude":-72.422278,"OBJECTID":52,"BPR":4,"ACRES":7447.7},"geometry":{"type":"MultiPoint","coordinates":[[-72.422278,43.5501529]]}},
+{"type":"Feature","properties":{"id":"oxbow-disc-golf","name":"Oxbow Disc Golf","city":"Bradford ","state":"Vermont","zip":"05033","holeCount":18,"rating":3,"latitude":44.0069414,"longitude":-72.115463,"OBJECTID":37,"BPR":4,"ACRES":7384.9},"geometry":{"type":"MultiPoint","coordinates":[[-72.115463,44.0069414]]}},
+{"type":"Feature","properties":{"id":"pearl-street-park-dgc","name":"Pearl Street Park Disc Golf","city":"Essex Junction ","state":"Vermont","zip":"05452","holeCount":9,"rating":null,"latitude":44.501327,"longitude":-73.1293668,"OBJECTID":13,"BPR":5,"ACRES":94322.9},"geometry":{"type":"MultiPoint","coordinates":[[-73.1293668,44.501327]]}},
+{"type":"Feature","properties":{"id":"little-green-monsters-short-course","name":"The Little Green Monsters Short Course","city":"Jamaica ","state":"Vermont","zip":"05343","holeCount":9,"rating":null,"latitude":43.1058098,"longitude":-72.7806422,"OBJECTID":60,"BPR":3,"ACRES":21112.0},"geometry":{"type":"MultiPoint","coordinates":[[-72.7806422,43.1058098]]}}
+]
+}
