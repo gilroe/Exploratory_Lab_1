@@ -125,13 +125,11 @@ map.on('load', () => {                  // lines 105-136 based on maplibre 'chan
 
     button.addEventListener('click', () => {
       visible = !visible;
-
       map.setLayoutProperty(
         layerId,
         'visibility',
         visible ? 'visible' : 'none'
       );
-
       button.querySelector('.button-text').textContent =
   `${label} (${visible ? 'Click to Show Overlap' : 'Click to Hide Overlap'})`;
     });
@@ -162,7 +160,6 @@ map.on('load', () => {                  // lines 105-136 based on maplibre 'chan
         }
       }
 
-      map.on('click', 'golfcourses', onEachGolf);
     
        function onEachDiscGolfoverlap(e) {
         const course = e.features[0].properties;
