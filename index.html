@@ -105,7 +105,7 @@ background: rgba(0, 0, 0, 0.6);
       zoom: 7
     });
     map.addControl(new maplibregl.NavigationControl());
-map.on('load', () => {                  // lines 105-136 based on maplibre 'change color with button', Navigation Control,                        
+                // lines 105-136 based on maplibre 'change color with button', Navigation Control,                        
   const layerOnOff = [                  // and Full Screen Control Examples
     {
       buttonId: 'OnOff-discgolf',
@@ -134,7 +134,6 @@ map.on('load', () => {                  // lines 105-136 based on maplibre 'chan
   `${label} (${visible ? 'Click to Show Overlap' : 'Click to Hide Overlap'})`;
     });
   });
-});
     //code from Class SLides
       function onEachDiscGolf(e) {
         const course = e.features[0].properties;
