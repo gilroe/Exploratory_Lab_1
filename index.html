@@ -104,19 +104,10 @@ background: rgba(0, 0, 0, 0.6);
       center: [-72.7, 44.0],    // longitude, latitude
       zoom: 7
     });
-    map.addControl(new maplibregl.NavigationControl());
-                // lines 105-136 based on maplibre 'change color with button', Navigation Control,                        
-  const layerOnOff = [                  // and Full Screen Control Examples
-    {
-      buttonId: 'OnOff-discgolf',
-      layerId: 'discgolf',
-      label: 'Disc Golf Courses'
-    },
-    {
-      buttonId: 'OnOff-golf',
-      layerId: 'golfcourses',
-      label: 'Golf Courses'
-    }
+    map.addControl(new maplibregl.NavigationControl());                                     
+  const layerOnOff = [                  // lines 107-25 based on maplibre 'change color with button', Navigation Control, 
+    { buttonId: 'OnOff-discgolf', layerId: 'discgolf', label: 'Disc Golf Courses'},  // and Full Screen Control Examples
+    {buttonId: 'OnOff-golf',layerId: 'golfcourses',label: 'Golf Courses'}
   ];
 
   layerOnOff.forEach(({ buttonId, layerId, label }) => {
@@ -126,9 +117,7 @@ background: rgba(0, 0, 0, 0.6);
     button.addEventListener('click', () => {
       visible = !visible;
       map.setLayoutProperty(
-        layerId,
-        'visibility',
-        visible ? 'visible' : 'none'
+        layerId, 'visibility', visible ? 'visible' : 'none'
       );
       button.querySelector('.button-text').textContent =
   `${label} (${visible ? 'Click to Show Overlap' : 'Click to Hide Overlap'})`;
@@ -137,7 +126,6 @@ background: rgba(0, 0, 0, 0.6);
     //code from Class SLides
       function onEachDiscGolf(e) {
         const course = e.features[0].properties;
-
         if (course.name) {
           const popup = new maplibregl.Popup();
           popup.setLngLat(e.lngLat);
@@ -150,7 +138,6 @@ background: rgba(0, 0, 0, 0.6);
 
       function onEachGolf(e) {
         const course = e.features[0].properties;
-
         if (course.SITE_NAME) {
           const popup = new maplibregl.Popup();
           popup.setLngLat(e.lngLat);
@@ -162,7 +149,6 @@ background: rgba(0, 0, 0, 0.6);
     
        function onEachDiscGolfoverlap(e) {
         const course = e.features[0].properties;
-
         if (course.name) {
           const popup = new maplibregl.Popup();
           popup.setLngLat(e.lngLat);
@@ -175,7 +161,6 @@ background: rgba(0, 0, 0, 0.6);
 
       function onEachGolfoverlap(e) {
         const course = e.features[0].properties;
-
         if (course.SITE_NAME) {
           const popup = new maplibregl.Popup();
           popup.setLngLat(e.lngLat);
