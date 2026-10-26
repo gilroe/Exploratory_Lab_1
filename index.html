@@ -76,13 +76,14 @@ background: rgba(0, 0, 0, 0.6);
 </style>
 </head>
 <body>
+  <!-- code from W3schools.com and youtube tutorial -->
   <div id="legend-controls">
-  <button id="toggle-discgolf">
+  <button id="OnOff-discgolf">
     <span class="button-symbol disc-golf"></span>
     <span class="button-text">Disc Golf Courses (Click to Hide)</span>
   </button>
 
-  <button id="toggle-golf">
+  <button id="OnOff-golf">
     <span class="button-symbol golf"></span>
     <span class="button-text">Golf Courses (Click to Hide)</span>
   </button>
@@ -101,15 +102,15 @@ background: rgba(0, 0, 0, 0.6);
       zoom: 7
     });
     map.addControl(new maplibregl.NavigationControl());
-map.on('load', () => {
-  const layerToggles = [
+map.on('load', () => {                  // lines 105-130 based on maplibre 'change color with button'
+  const layerOnOff = [
     {
-      buttonId: 'toggle-discgolf',
+      buttonId: 'OnOff-discgolf',
       layerId: 'discgolf',
       label: 'Disc Golf Courses'
     },
     {
-      buttonId: 'toggle-golf',
+      buttonId: 'OnOff-golf',
       layerId: 'golfcourses',
       label: 'Golf Courses'
     }
@@ -117,7 +118,7 @@ map.on('load', () => {
 
   layerToggles.forEach(({ buttonId, layerId, label }) => {
     const button = document.getElementById(buttonId);
-    let visible = true;
+    var visible = true;
 
     button.addEventListener('click', () => {
       visible = !visible;
