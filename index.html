@@ -80,12 +80,12 @@ background: rgba(0, 0, 0, 0.6);
   <div id="legend-controls">
   <button id="OnOff-discgolf">
     <span class="button-symbol disc-golf"></span>
-    <span class="button-text">Disc Golf Courses (Click to Hide)</span>
+    <span class="button-text">Disc Golf Courses (Click to Show Overlap)</span>
   </button>
 
   <button id="OnOff-golf">
     <span class="button-symbol golf"></span>
-    <span class="button-text">Golf Courses (Click to Hide)</span>
+    <span class="button-text">Golf Courses (Click to Show Overlap)</span>
   </button>
   
  <div class="biodiversity-label">
@@ -130,7 +130,7 @@ map.on('load', () => {                  // lines 105-136 based on maplibre 'chan
       );
 
       button.querySelector('.button-text').textContent =
-  `${label} (${visible ? 'Click to Hide' : 'Click to Show'})`;
+  `${label} (${visible ? 'Click to Show Overlap' : 'Click to Hide Overlap'})`;
     });
   });
 });
