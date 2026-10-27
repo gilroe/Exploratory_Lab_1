@@ -894,7 +894,8 @@
       "source": "discgolfoverlap",
       "paint": {"circle-color": "rgba(0, 48, 244, 1)",
       "circle-radius": ["interpolate", ["linear"], ["zoom"], 5, 1, 10, 8, 15, 9]
-    }
+      }
+    },
   ],
   "id": "basic"
 }
