@@ -40,7 +40,7 @@
       "data": "https://raw.githubusercontent.com/gilroe/Exploratory_Lab_1/refs/heads/main/golfcourseoverlap.geojson"
     }
   },
-  "glyphs": "https://api.maptiler.com/fonts/{fontstack}/{range}.91v8GdkhoZl513qHt6P8",
+  "glyphs": "https://api.maptiler.com/fonts/{fontstack}/{range}.pbf?91v8GdkhoZl513qHt6P8",
   "layers": [
     {
       "id": "background",
