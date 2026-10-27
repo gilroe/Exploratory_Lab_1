@@ -119,11 +119,11 @@ background: rgba(0, 0, 0, 0.6);
       if (visible){
         map.setLayoutProperty(layerId, 'visibility', 'visible');
         button.querySelector('.button-text').textContent =
-          `${label} (Click to Hide Overlap)`;
+          `${label} (Click to Show Overlap)`;
       }else{
         map.setLayoutProperty(layerId, 'visibility', 'none');
         button.querySelector('.button-text').textContent =
-          `${label} (Click to Show Overlap)`;
+          `${label} (Click to Hide Overlap)`;
       }
     });
   });
