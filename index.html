@@ -106,7 +106,7 @@ background: rgba(0, 0, 0, 0.6);
     });
     map.addControl(new maplibregl.NavigationControl());                                     
   const layerOnOff = [                  // lines 107-25 based on maplibre 'change color with button', Navigation Control, 
-    { buttonId: 'OnOff-discgolf', layerId: 'discgolf', label: 'Disc Golf Courses'},  // and Full Screen Control Examples
+    { buttonId: 'OnOff-discgolf', layerId: 'discgolf', label: 'Disc Golf Courses'},  // and Full Screen Control Examples + youtube tutorials
     {buttonId: 'OnOff-golf',layerId: 'golfcourses',label: 'Golf Courses'}
   ];
 
@@ -116,11 +116,15 @@ background: rgba(0, 0, 0, 0.6);
 
     button.addEventListener('click', () => {
       visible = !visible;
-      map.setLayoutProperty(
-        layerId, 'visibility', visible ? 'visible' : 'none'
-      );
-      button.querySelector('.button-text').textContent =
-  `${label} (${visible ? 'Click to Show Overlap' : 'Click to Hide Overlap'})`;
+      if (visible){
+        map.setLayoutProperty(layerId, 'visibility', 'visible');
+        button.querySelector('.button-text').textContent =
+          `${label} (Click to Hide Overlap)`;
+      }else{
+        map.setLayoutProperty(layerId, 'visibility', 'none');
+        button.querySelector('.button-text').textContent =
+          `${label} (Click to Show Overlap)`;
+      }
     });
   });
     //code from Class SLides
