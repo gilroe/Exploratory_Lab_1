@@ -31,12 +31,6 @@
       "type": "geojson",
       "data": "https://raw.githubusercontent.com/gilroe/Exploratory_Lab_1/refs/heads/main/stateboundary.geojson"
     },
-    "hillshades": {
-      "type": "raster-dem",
-      "tiles": ["https://tile.opentopomap.org/{z}/{x}/{y}.png  Copy URL"],
-      "minzoom": 0,
-      "maxzoom": 14
-    },
     "discgolfoverlap": {
       "type": "geojson",
       "data": "https://raw.githubusercontent.com/gilroe/Exploratory_Lab_1/refs/heads/main/discgolfoverlap.geojson"
