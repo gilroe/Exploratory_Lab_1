@@ -862,7 +862,7 @@
       "source": "golfcourses",
       "layout": {"visibility": "visible"},
       "paint": {"circle-color": "rgba(209, 15, 15, 1)",
-        "circle-radius": ["interpolate", ["linear"], ["zoom"], 5, 1, 7, 7, 15, 14]
+        "circle-radius": ["interpolate", ["linear"], ["zoom"], 5, 1, 7, 7, 15, 10]
       }
     },
     {
@@ -870,7 +870,7 @@
       "type": "circle",
       "source": "discgolfcourses",
       "paint": {"circle-color": "rgba(0, 48, 244, 1)",
-        "circle-radius": ["interpolate", ["linear"], ["zoom"], 5, 1, 7, 7, 15, 14]
+        "circle-radius": ["interpolate", ["linear"], ["zoom"], 5, 1, 7, 7, 15, 10]
       }
     },
     {
@@ -879,7 +879,7 @@
       "source": "golfcourseoverlap",
       "layout": {"visibility": "visible"},
       "paint": {"circle-color": "rgba(209, 15, 15, 1)",
-        "circle-radius": ["interpolate", ["linear"], ["zoom"], 5, 1, 7, 7, 15, 14]
+        "circle-radius": ["interpolate", ["linear"], ["zoom"], 5, 1, 7, 7, 15, 10]
       }
     },
     {
@@ -887,7 +887,7 @@
       "type": "circle",
       "source": "discgolfoverlap",
       "paint": {"circle-color": "rgba(0, 48, 244, 1)",
-        "circle-radius": ["interpolate", ["linear"], ["zoom"], 5, 1, 7, 7, 15, 14]
+        "circle-radius": ["interpolate", ["linear"], ["zoom"], 5, 2, 7, 7, 15, 10]
       }
     }
   ],
